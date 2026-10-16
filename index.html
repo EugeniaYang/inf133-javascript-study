@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="INF133 JavaScript notes, runnable examples, practice exercises, solutions, and slide review.">
+  <title>JavaScript Fundamentals · INF133</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="study-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="sidebar" aria-label="Study navigation">
+    <a class="brand" href="#summary"><span class="js-mark" aria-hidden="true">JS</span><span>INF133<span class="brand-subtitle">Discussion companion</span></span></a>
+    <p class="nav-label">YOUR STUDY GUIDE</p>
+    <nav class="main-nav" aria-label="Sections">
+      <a href="#summary" data-view="summary" aria-current="page"><span>01</span> Summary</a>
+      <a href="#examples" data-view="examples"><span>02</span> Examples</a>
+      <a href="#practice" data-view="practice"><span>03</span> Practice</a>
+      <a href="#solutions" data-view="solutions"><span>04</span> Solutions</a>
+      <a href="#review" data-view="review"><span>05</span> Slide review</a>
+      <a href="#files" data-view="files"><span>06</span> Files & instructions</a>
+    </nav>
+    <div class="sidebar-footer">
+      <p>Based on the 28-slide<br>JavaScript discussion.</p>
+      <a href="https://docs.google.com/presentation/d/10jaMm8s-_tPpA5ALKdsAW674cofOVfaz/edit" target="_blank" rel="noopener noreferrer">Open original slides <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <header class="page-header">
+      <p class="eyebrow">INF133 <span aria-hidden="true">/</span> JAVASCRIPT DISCUSSION</p>
+      <h1 id="page-title">JavaScript fundamentals</h1>
+      <p id="page-description" class="page-description">The key ideas from your slides, with code you can run and exercises you can check.</p>
+    </header>
+
+    <section id="view-summary" class="view" aria-labelledby="page-title">
+      <p class="compact-hint">Choose a topic to practice, or click <strong>Why?</strong> for its explanation.</p>
+      <div id="summary-content" class="concept-list"></div>
+      <div class="section-end"><p>Ready to predict the output?</p><a class="button primary" href="#examples">Explore the examples <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section id="view-examples" class="view" hidden aria-labelledby="page-title">
+      <label for="example-select" class="field-label">EXAMPLE FROM THE SLIDES</label>
+      <select id="example-select" class="example-select"></select>
+      <div class="workspace-heading"><div><p id="example-slides" class="eyebrow"></p><h2 id="example-title"></h2></div><button id="reset-example" class="button subtle" type="button">Reset example</button></div>
+      <div class="example-help-row"><button id="example-help" class="help-trigger" type="button">Why this works <span aria-hidden="true">?</span></button><p id="example-description" hidden></p></div>
+      <label class="editor-label" for="example-editor">EDITABLE EXAMPLE <span>Change a value and run it again</span></label>
+      <textarea id="example-editor" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="example-description"></textarea>
+      <div class="action-row"><button id="run-example" type="button" class="button primary">Run example <span aria-hidden="true">▶</span></button><button id="copy-example" type="button" class="button subtle">Copy code</button><a id="download-example" class="button subtle" href="examples.js" download>Download .js</a><span id="example-status" class="small-status" role="status"></span></div>
+      <div class="output-grid">
+        <section class="output-panel" aria-labelledby="example-output-label"><h3 id="example-output-label">Your output</h3><pre id="example-output" class="output" aria-live="polite">Run the example to see its output here.</pre></section>
+        <details class="expected-output"><summary>Expected output for the original example</summary><pre id="example-expected" class="output"></pre></details>
+      </div>
+    </section>
+
+    <section id="view-practice" class="view" hidden aria-labelledby="page-title">
+      <div class="practice-intro"><p>Complete the functions, then check your work.</p><button id="practice-help" class="help-trigger" type="button">Editor help <span aria-hidden="true">?</span></button></div>
+      <label for="exercise-select" class="field-label">CURRENT EXERCISE</label>
+      <select id="exercise-select"></select>
+      <div class="exercise-brief"><p id="exercise-slides" class="eyebrow"></p><h2 id="exercise-title"></h2><p id="exercise-prompt"></p><pre id="exercise-expected" class="inline-code"></pre></div>
+      <div class="editor-toolbar"><label for="practice-editor" class="editor-label">YOUR CODE</label><span id="draft-status" class="small-status" role="status"></span></div>
+      <textarea id="practice-editor" class="code-editor practice-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="JavaScript practice editor"></textarea>
+      <div class="action-row"><button id="run-practice" type="button" class="button primary">Run my code</button><button id="check-exercise" type="button" class="button secondary">Check output</button><button id="download-practice" type="button" class="button subtle">Download answers</button><button id="load-practice" type="button" class="button subtle">Load a .js file</button><input id="practice-file" type="file" accept=".js,text/javascript,application/javascript,text/plain" hidden></div>
+      <p class="editor-note">Download answers to keep a copy of your work.</p>
+      <section id="check-results" class="check-results" aria-label="Your output" aria-live="polite"><p class="muted">Complete the TODO, then run your code.</p></section>
+      <details class="solution-reveal"><summary>Reference solution for the current exercise</summary><pre><code id="exercise-solution"></code></pre><p>Read the explanation in the comments, then try writing the answer yourself.</p></details>
+      <div class="reset-area"><button id="reset-practice" class="text-button" type="button">Reset to the starter code</button><span id="reset-confirmation" hidden>Discard your current answers? <button id="confirm-reset" class="text-button" type="button">Yes, reset</button> <button id="cancel-reset" class="text-button" type="button">Keep my answers</button></span></div>
+    </section>
+
+    <section id="view-solutions" class="view" hidden aria-labelledby="page-title">
+      <p>Compare your code with the reference implementations.</p>
+      <label for="solution-select" class="field-label">ORIGINAL EXERCISE</label><select id="solution-select"></select>
+      <div class="action-row"><a id="download-solution" href="solutions.js" download class="button primary">Download solution</a><button id="copy-solutions" class="button subtle" type="button">Copy solution</button><span id="solution-status" class="small-status" role="status"></span></div>
+      <pre class="solution-code"><code id="solutions-code"></code></pre>
+      <a class="button secondary" href="#practice">Back to practice</a>
+    </section>
+
+    <section id="view-review" class="view" hidden aria-labelledby="page-title"><p class="compact-hint">Click a correction to see the issue and suggested fix.</p><div id="review-content"></div></section>
+
+    <section id="view-files" class="view" hidden aria-labelledby="page-title">
+      <div class="prose"><h2>Start with index.html</h2><p>Keep the files together in the same folder and open <code>index.html</code> in a browser. Everything needed for the study page is included. No installation, server, or internet connection is required for the local exercises.</p><p>The original slide link and documentation links require an internet connection.</p><h2>How the files connect</h2><p><code>index.html</code> provides the page structure. <code>style.css</code> styles it. Standard script tags connect <code>study-data.js</code> and <code>app.js</code> to the page.</p><p>Each example is the code from one original slide. The examples and exercises folders contain separate .js files. The main examples.js, practice.js, and solutions.js files contain the first example and average exercise. You can load your own edited <code>practice.js</code> through the Practice section.</p></div>
+      <div class="file-list">
+        <a href="README.md" download><span><strong>Study notes</strong><small>Full summary, predictions, and instructions</small></span><code>README.md ↓</code></a>
+        <a href="examples.js" download><span><strong>Example code</strong><small>The discountPrices example from the slides</small></span><code>examples.js ↓</code></a>
+        <a href="practice.js" download><span><strong>Starter exercises</strong><small>The original average exercise starter</small></span><code>practice.js ↓</code></a>
+        <a href="solutions.js" download><span><strong>Reference solutions</strong><small>The original forEach average solution</small></span><code>solutions.js ↓</code></a>
+        <a href="slide-review.md" download><span><strong>Slide review</strong><small>Corrections and teaching suggestions by slide</small></span><code>slide-review.md ↓</code></a>
+      </div>
+      <div class="prose"><h2>Optional: run with Node.js</h2><p>Open a terminal in this folder:</p><pre><code>node examples.js
+node practice.js
+node solutions.js</code></pre><p>Run a single .js file to see its console output. Some original examples intentionally raise an error to illustrate scope or hoisting.</p></div>
+    </section>
+    <footer class="page-footer"><span>INF133 · JavaScript fundamentals</span><span>Read. Experiment. Practice.</span></footer>
+    <noscript><p>Enable JavaScript to use the study page. The README.md and slide-review.md files also contain the complete notes.</p></noscript>
+  </main>
+  <div id="explanation-popover" class="explanation-popover" popover="auto" role="dialog" aria-labelledby="explanation-title">
+    <div class="popover-heading"><h2 id="explanation-title"></h2><button id="close-explanation" class="popover-close" type="button" popovertarget="explanation-popover" popovertargetaction="hide" aria-label="Close explanation">×</button></div>
+    <div id="explanation-body" class="prose"></div>
+  </div>
+</body>
+</html>
